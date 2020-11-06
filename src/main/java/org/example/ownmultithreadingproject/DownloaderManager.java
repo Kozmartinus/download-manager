@@ -6,6 +6,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class DownloaderManager {
     public static void downloadViaUrl(String myUrl, String myFilename) throws IOException {
@@ -45,4 +48,17 @@ public class DownloaderManager {
         System.out.print("\r" + myFilename + ":  " + actualSize + "/" + myFileSize + " MB   " + currentPercentage + " %   " + rate + " KB/s   " + remainingTime + " remaining sec");
     }
 
+    public static void downloadFiles(List<FileOnWeb> filesToDownload, Logger logger) {
+        ExecutorService executor = Executors.newCachedThreadPool();
+        for (FileOnWeb download : filesToDownload) {
+            executor.submit(() -> {
+                try {
+                    downloadViaUrl(download.getUrl(), download.getFilename(), logger);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+        executor.shutdown();
+    }
 }
