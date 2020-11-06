@@ -1,4 +1,4 @@
-package org.example.ownmultithreadingproject;
+package org.example.ownmultithreadingproject.model;
 
 public class FileOnWeb {
     private String url;

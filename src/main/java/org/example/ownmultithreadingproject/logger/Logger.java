@@ -1,4 +1,6 @@
-package org.example.ownmultithreadingproject;
+package org.example.ownmultithreadingproject.logger;
+
+import org.example.ownmultithreadingproject.model.DownLoad;
 
 import java.util.ArrayList;
 import java.util.List;

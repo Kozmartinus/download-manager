@@ -1,4 +1,8 @@
-package org.example.ownmultithreadingproject;
+package org.example.ownmultithreadingproject.app;
+
+import org.example.ownmultithreadingproject.DownloaderManager;
+import org.example.ownmultithreadingproject.model.FileOnWeb;
+import org.example.ownmultithreadingproject.logger.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;

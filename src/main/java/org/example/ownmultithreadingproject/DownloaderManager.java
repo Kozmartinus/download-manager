@@ -1,5 +1,9 @@
 package org.example.ownmultithreadingproject;
 
+import org.example.ownmultithreadingproject.logger.Logger;
+import org.example.ownmultithreadingproject.model.DownLoad;
+import org.example.ownmultithreadingproject.model.FileOnWeb;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
