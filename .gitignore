@@ -1,3 +1,4 @@
 .idea/
 ownMultithreading.iml
-*.class
+target/
+downloaded files/
