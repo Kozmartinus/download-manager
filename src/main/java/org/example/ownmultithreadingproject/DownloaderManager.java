@@ -1,5 +1,6 @@
 package org.example.ownmultithreadingproject;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -13,7 +14,11 @@ import java.util.concurrent.Executors;
 public class DownloaderManager {
     public static void downloadViaUrl(String myUrl, String myFilename, Logger logger) throws IOException {
         URL url = new URL(myUrl);
-        FileOutputStream fos = new FileOutputStream(myFilename);
+        File directory = new File("downloaded files");
+        if (! directory.exists()){
+            directory.mkdir();
+        }
+        FileOutputStream fos = new FileOutputStream("./downloaded files/" + myFilename);
         HttpURLConnection httpConnection = (HttpURLConnection) (url.openConnection());
         long fileSize = httpConnection.getContentLength();
         ReadableByteChannel rbc = Channels.newChannel(url.openStream());
