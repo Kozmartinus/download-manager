@@ -1,0 +1,6 @@
+https://www.learningcontainer.com/
+http://www.fsn.hu/testfiles/
+
+
+https://stackoverflow.com/questions/921262/how-to-download-and-save-a-file-from-internet-using-java
+https://stackoverflow.com/questions/14069848/download-a-file-while-also-updating-a-jprogressbar
